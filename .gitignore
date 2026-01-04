@@ -1,0 +1,6 @@
+api/vendor
+api/.env
+api/notes.txt
+api/.idea
+.idea
+/vendor
