@@ -4,3 +4,6 @@ api/notes.txt
 api/.idea
 .idea
 /vendor
+api/.phpunit.result.cache
+api/logs
+!api/logs/.gitkeep

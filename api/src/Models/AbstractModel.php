@@ -2,9 +2,6 @@
 
 namespace App\Models;
 
-use function Carbon\isEmpty;
-use function property_exists;
-
 abstract class AbstractModel
 {
     protected static string $table;

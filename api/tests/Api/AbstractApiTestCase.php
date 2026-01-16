@@ -78,6 +78,7 @@ abstract class AbstractApiTestCase extends TestCase
             $response = self::$client->post($uri, [
                 'json' => $data
             ]);
+
         } catch (GuzzleException $e) {
             $this->statusCode = -1;
             $this->responseBody = [];

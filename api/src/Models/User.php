@@ -4,7 +4,7 @@ namespace App\Models;
 
 class User extends AbstractModel
 {
-    protected static string $table = 'tasks';
+    protected static string $table = 'users';
 
     public int $id;
     public string $username;

@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\AbstractModel;
 use App\Repositories\AbstractRepository;
 use App\Validation\Validator;
 use Illuminate\Validation\ValidationException;
@@ -93,9 +92,6 @@ abstract class AbstractRestController extends AbstractController
 
         try {
             $result = $this->validator->validate($inputData, $this->updateRules);
-            file_put_contents(__DIR__ . '/../../logs/temp.txt', json_encode([
-                'class' => $result,
-            ]));
         } catch (ValidationException $e) {
             $this->json(['errors' => $e->errors()], 422);
             return;
@@ -121,16 +117,5 @@ abstract class AbstractRestController extends AbstractController
         }
 
         $this->json(['message' => $this->modelName . ' deleted']);
-    }
-
-    /**
-     * @param array $data
-     * @return AbstractModel
-     */
-    protected function makeModel(array $data): AbstractModel
-    {
-        /** @var AbstractModel $modelClass */
-        $modelClass = $this->repo->getModelClass();
-        return $modelClass::fromArray($data);
     }
 }
